@@ -4,8 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
@@ -13,7 +11,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -58,7 +55,7 @@ fun LoginInputFIelds() {
         value = text,
         singleLine = true,
         onValueChange = { text = it },
-        label = { Text(text = "UserName") }
+        label = { Text(text = "UserName") },
     )
     OutlinedTextField(
         value = password,
@@ -83,7 +80,8 @@ fun LoginInputFIelds() {
 fun FilledButton(textValue: String, modifier: Modifier = Modifier) {
     Button(
         onClick = { null },
-        modifier = modifier
+        modifier = modifier,
+        colors = ButtonDefaults.buttonColors(Color(0xff6563ff))
     ) {
         Text( text = textValue)
     }
